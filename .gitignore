@@ -1,6 +1,6 @@
 .evn
 node_modules
-src
+/src
 
 # Editor directories and files
 .idea
