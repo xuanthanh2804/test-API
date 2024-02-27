@@ -1,0 +1,78 @@
+<!-- views/home.handlebars -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User List</title>
+  <style>
+    <style>body {
+      background-color: #f8f9fa;
+    }
+
+    table {
+      margin-top: 50px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    th,
+    td {
+      text-align: center;
+    }
+
+    th {
+      background-color: #007bff;
+      color: #ffffff;
+    }
+
+    a {
+      margin-right: 10px;
+      color: #007bff;
+    }
+  </style>
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each dataTable}}
+        <tr>
+          <th scope="row">{{sum 1 @index}}</th>
+          <!-- Use the actual user properties from your database -->
+          <td>{{this.first_name}}</td>
+          <td>{{this.last_name}}</td>
+          <td>{{this.email}}</td>
+          <td>
+
+            <form action="/edit-user/{{id}}?__method=PUT" method="get">
+              {{!-- <a href="/edit-user/{{id}}" class="btn btn-warning btn-sm">Edit</a> --}}
+              <button class="btn btn-warning btn-sm"> Edit </button>
+            </form>
+            <form action="/delete-user/{{id}}?__method=DELETE" method="get">
+              {{!-- <a href="/delete-user/{{id}}?_method=DELETE" class="btn btn-danger btn-sm">Delete</a> --}}
+              <button class="btn btn-danger btn-sm">Delete</button>
+            </form>
+
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+</body>
+
+</html>

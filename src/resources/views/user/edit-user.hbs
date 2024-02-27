@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="text-center" style="margin-top: 5%;">
+    <h1 class="display-3"> EDIT INFORMATION</h1>
+  </div>
+
+  <form action="/put-postCRUD" method="post" class="col-9 row g-3 needs-validation mt-auto mb-4 mx-auto " novalidate>
+    <div class="border border-light">
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label ">FIRST NAME</label>
+        <input type="text" class="form-control" name="first_name" placeholder="First Name " value="{{user.first_name}}"
+          required>
+        <div class="valid-feedback" style="display: none;">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Please fill out this field.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">LAST NAME</label>
+        <input type="text" class="form-control" name="last_name" placeholder="Last Name " value="{{user.last_name}}">
+        <div class="valid-feedback" style="display: none;">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Please fill out this field.
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+        <label class="form-check-label" for="invalidCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="invalid-feedback" style="display: none;">
+          You must agree before submitting.
+        </div>
+      </div>
+    </div>
+    <div style="display: none;">
+      <input type="text" class="form-control" name="id" value="{{user.id}}">
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+
+
+  </form>
+
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+  </script>
+</body>
+
+</html>

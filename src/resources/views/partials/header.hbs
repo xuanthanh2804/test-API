@@ -1,0 +1,120 @@
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Soft box shadow */
+  .soft-box {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  /* Soft button */
+  .soft-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #5cb85c;
+    /* Green color */
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+  }
+
+  .soft-button:hover {
+    background-color: #4cae4c;
+    /* Darker green on hover */
+  }
+
+  /* Soft input */
+  .soft-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+
+  .soft-input:focus {
+    border-color: #5cb85c;
+    /* Green border on focus */
+  }
+
+  /* Soft link */
+  .soft-link {
+    color: #428bca;
+    /* Blue color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .soft-link:hover {
+    color: #3071a9;
+    /* Darker blue on hover */
+  }
+
+  /* Soft heading */
+  .soft-heading {
+    color: #333333;
+  }
+
+  /* Soft background gradient */
+  .soft-gradient-background {
+    background: linear-gradient(to right, #8e9eab, #eef2f3);
+  }
+
+  /* Soft card */
+  .soft-card {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+</style>
+<nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">STORES</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/users">SERVICES</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ACCOUNT
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{slug}}/user/create-user">Register</a></li>
+            <li><a class="dropdown-item" href="{{slug}}/user/login-user">Sign in</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
